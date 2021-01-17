@@ -6,7 +6,7 @@
 
 假设有如下一个非常简单的消息定义：
 
-```
+``` protobuf
 message Test1 {
     optional int32 a = 1;
 }
@@ -133,7 +133,7 @@ ZigZag 编码映射有符号整数到无符号整数，这样对于绝对值很�
 
 固定类型为 2（length-delimited）表示该值是一个编码长度后面跟指定字节长度数据的 varint。
 
-```
+``` protobuf
 message Test2 {
   optional string b = 2;
 }
@@ -160,7 +160,7 @@ varint 的长度为 7，向后取 7 个字节，得到 “testing” 以 UTF8 �
 
 下面是一个包含示例类型 Test1 的嵌套消息的消息定义：
 
-```
+``` protobuf
 message Test3 {
   optional Test1 c = 3;
 }
@@ -203,7 +203,7 @@ message.MergeFrom(message2);
 
 例如，假设有下面的消息类型：
 
-```
+``` protobuf
 message Test4 {
   repeated int32 d = 4 [packed = true];
 }

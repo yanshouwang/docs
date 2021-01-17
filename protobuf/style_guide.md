@@ -34,7 +34,7 @@
 
 消息使用帕斯卡命名法，如 SongServerRequest。字段（包括字段名和扩展名）使用小写蛇形命名法，如 song_name。
 
-```
+``` protobuf
 message SongServerRequest {
     required string song_name = 1;
 }
@@ -60,7 +60,7 @@ public Builder setSongName(String v) { ... }
 
 对重复字段（数组）使用复数名称。
 
-```
+``` protobuf
 repeated string keys = 1;
 ...
 repeated MyMessage accounts = 17;
@@ -70,7 +70,7 @@ repeated MyMessage accounts = 17;
 
 枚举类型名使用帕斯卡命名法，枚举值的名称使用大写蛇形命名法：
 
-```
+``` protobuf
 enum FooBar {
     FOO_BAR_UNSPECIFIED = 0;
     FOO_BAR_FIRST_VALUE - 1;
@@ -84,7 +84,7 @@ enum FooBar {
 
 如果 .proto 文件中定义了 RPC 服务，服务名和 RPC 方法名都使用帕斯卡命名法：
 
-```
+``` protobuf
 service FooService {
     rpc GetSomething(FooRequest) returns (FooResponse);
 }
